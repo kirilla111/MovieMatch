@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:12200/movie_db
+    username: user
+    password: password
+    driverClassName: org.postgresql.Driver
+
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,logfile,info,env,loggers,flyway,metrics, mappings
