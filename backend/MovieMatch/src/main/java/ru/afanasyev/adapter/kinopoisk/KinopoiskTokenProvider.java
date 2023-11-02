@@ -20,8 +20,11 @@ public class KinopoiskTokenProvider implements TokenProvider {
     @Override
     public String getToken() {
         if (tokens.isEmpty()) {
-            throw new NullPointerException("Available tokens left");
+            throw new NullPointerException("No Available tokens");
         }
-        return tokens.pop();
+        String token = tokens.pollFirst();
+        tokens.addLast(token);
+
+        return token;
     }
 }
