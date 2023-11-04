@@ -12,7 +12,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 @Configuration
-public class KinopoiskConfig {
+public class KinopoiskConfiguration {
     private static final String TOKENS_FILE_NAME = "classpath:kinopoisk/tokens";
 
     @Bean(name = "kinopoisk-tokens")

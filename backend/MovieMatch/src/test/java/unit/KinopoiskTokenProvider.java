@@ -1,6 +1,5 @@
 package unit;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.afanasyev.adapter.kinopoisk.KinopoiskTokenProvider;
@@ -23,9 +22,9 @@ class KinopoiskTokenProviderTest {
 
     @Test
     void getNextToken() {
-        String token1 = tokenProvider.getToken();
-        String token2 = tokenProvider.getToken();
-        String token3 = tokenProvider.getToken();
+        String token1 = tokenProvider.switchToken();
+        String token2 = tokenProvider.switchToken();
+        String token3 = tokenProvider.switchToken();
 
         assertEquals(token1, token3);
     }

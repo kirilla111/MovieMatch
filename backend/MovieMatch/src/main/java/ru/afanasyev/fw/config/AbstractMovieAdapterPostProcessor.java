@@ -50,7 +50,6 @@ public class AbstractMovieAdapterPostProcessor implements BeanPostProcessor {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws InvocationTargetException, IllegalAccessException {
-            target.switchToken();
             try {
                 return method.invoke(target, args);
             } catch (Exception e) {

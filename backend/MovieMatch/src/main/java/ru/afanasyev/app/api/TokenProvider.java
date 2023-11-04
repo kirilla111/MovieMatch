@@ -6,5 +6,5 @@ public interface TokenProvider {
      *
      * @return Доступный токен
      */
-    String getToken();
+    String switchToken();
 }

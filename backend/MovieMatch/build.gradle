@@ -16,6 +16,7 @@ repositories {
 ext {
     mapstructVersion = '1.5.3.Final'
     testContainersVersion = '1.17.5'
+    springDocVersion = '1.7.0'
 }
 
 dependencies {
@@ -23,6 +24,7 @@ dependencies {
 
     implementation 'org.flywaydb:flyway-core'
     implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    implementation "org.springdoc:springdoc-openapi-ui:${springDocVersion}"
     // Starters
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'

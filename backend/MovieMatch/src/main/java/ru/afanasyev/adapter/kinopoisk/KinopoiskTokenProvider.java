@@ -18,7 +18,7 @@ public class KinopoiskTokenProvider implements TokenProvider {
     }
 
     @Override
-    public String getToken() {
+    public String switchToken() {
         if (tokens.isEmpty()) {
             throw new NullPointerException("No Available tokens");
         }
