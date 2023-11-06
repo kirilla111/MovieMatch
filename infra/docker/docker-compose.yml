@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
 
-  bookkeeping-postgres:
+  movie-match-postgres:
     image: postgres
     container_name: 'movie-match-postgres'
     environment:
