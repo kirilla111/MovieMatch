@@ -51,3 +51,11 @@ compileJava {
             '-Amapstruct.unmappedTargetPolicy=IGNORE'
     ]
 }
+
+tasks.named('jar') {
+    archiveFileName.set("movie-match.jar")
+}
+
+tasks.named('bootJar') {
+    archiveFileName.set("movie-match-plain.jar")
+}
