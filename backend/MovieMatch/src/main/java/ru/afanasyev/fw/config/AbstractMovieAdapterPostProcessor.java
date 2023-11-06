@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 import ru.afanasyev.adapter.AbstractMovieAdapter;
+import ru.afanasyev.app.api.ServiceUnavailableException;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
@@ -49,12 +50,16 @@ public class AbstractMovieAdapterPostProcessor implements BeanPostProcessor {
         }
 
         @Override
-        public Object invoke(Object proxy, Method method, Object[] args) throws InvocationTargetException, IllegalAccessException {
+        public Object invoke(Object proxy, Method method, Object[] args) {
             try {
                 return method.invoke(target, args);
             } catch (Exception e) {
                 target.switchToken();
-                return method.invoke(target, args);
+                try {
+                    return method.invoke(target, args);
+                } catch (Exception ex) {
+                    throw new ServiceUnavailableException(ex);
+                }
             }
         }
     }

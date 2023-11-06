@@ -2,7 +2,6 @@ plugins {
     id 'org.springframework.boot' version '2.7.6'
     id 'io.spring.dependency-management' version '1.0.14.RELEASE'
     id 'java'
-    id 'checkstyle'
 }
 
 group 'ru.afanasyev'
@@ -44,4 +43,11 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+compileJava {
+    options.compilerArgs += [
+            '-Amapstruct.defaultComponentModel=spring',
+            '-Amapstruct.unmappedTargetPolicy=IGNORE'
+    ]
 }
